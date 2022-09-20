@@ -15,6 +15,12 @@ SELECT *
 FROM `students` 
 WHERE `date_of_birth` > "1992-09-18";
 
+//oppure
+
+SELECT * 
+FROM `students`
+WHERE TIMESTAMPDIFF(YEAR, `date_of_birth`, CURDATE()) > 30 ORDER BY `students`, `date_of_birth` DESC                                                    
+
 4)
 SELECT * 
 FROM `courses` 
@@ -39,6 +45,6 @@ AS 'number_departments'
 FROM `departments`
 
 8)
-SELECT * 
+SELECT COUNT(*) AS "number_teacher" 
 FROM `teachers` 
 WHERE `phone` IS NULL;
